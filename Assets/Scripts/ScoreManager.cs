@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour
 
     private int score = 0;
 
-    [SerializaField] textMeshProUGUI scoreText;
+    [SerializeField] textMeshProUGUI scoreText;
     // Start is called before the first frame update
     void Awake()
     {
@@ -17,6 +17,12 @@ public class ScoreManager : MonoBehaviour
 
     void start()
     {
+        UpdateScoreUI();
+    }
+
+    public void IncrementScore(int value)
+    {
+        score += value;
         UpdateScoreUI();
     }
 
